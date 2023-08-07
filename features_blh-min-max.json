@@ -1,0 +1,136 @@
+{
+    "date_attribute": "date",
+    "time_attribute": "time",
+    "features": [
+        {
+            "name": "pm",
+            "source_attribute": "pm25",
+            "aggregation": {
+                "type": "mean"
+            }
+        },
+        {
+            "name": "pmshift",
+            "source_attribute": "pm25",
+            "aggregation": {
+                "type": "mean"
+            },
+            "shift": 1
+        },
+
+        {
+            "name": "rain",
+            "source_attribute": "rain",
+            "aggregation": {
+                "type": "mean"
+            }
+        },
+        {
+            "name": "rain1",
+            "source_attribute": "rain",
+            "aggregation": {
+                "type": "mean",
+                "start": "07:00:00",
+                "end": "12:00:00"
+            }
+        },
+        {
+            "name": "rain2",
+            "source_attribute": "rain",
+            "aggregation": {
+                "type": "mean",
+                "start": "12:30:00",
+                "end": "16:00:00"
+            }
+        },
+        {
+            "name": "rain3",
+            "source_attribute": "rain",
+            "aggregation": {
+                "type": "mean",
+                "start": "16:30:00",
+                "end": "06:30:00"
+            }
+        },
+
+        {
+            "name": "windSpeed",
+            "source_attribute": "windSpeed",
+            "aggregation": {
+                "type": "mean",
+                "start": "05:00:00",
+                "end": "17:00:00"
+            }
+        },
+        {
+            "name": "windSpeed2",
+            "source_attribute": "windSpeed",
+            "aggregation": {
+                "type": "mean",
+                "start": "16:30:00",
+                "end": "06:30:00"
+            }
+        },
+
+        {
+            "name": "tdiff1",
+            "source_attribute": "temperature",
+            "aggregation": {
+                "type": "mean",
+                "start": "05:00:00",
+                "end": "17:00:00"
+            },
+            "delta": 1
+        },
+        {
+            "name": "tdiff2",
+            "source_attribute": "temperature",
+            "aggregation": {
+                "type": "mean",
+                "start": "17:30:00",
+                "end": "04:30:00"
+            },
+            "delta": 1
+        },
+        {
+            "name": "temp_grad",
+            "source_attribute": "temperature",
+            "aggregation": {
+                "type": "delta",
+                "start": "04:00:00",
+                "end": "12:00:00"
+            }
+        },
+        {
+            "name": "temperature",
+            "source_attribute": "temperature",
+            "aggregation": {
+                "type": "mean"
+            }
+        },
+
+        {
+            "name": "weekday",
+            "source_attribute": "pm25",
+            "aggregation": {
+                "type": "mean",
+                "group_by": "weekday"
+            }
+        },
+
+        {
+            "name": "boundaryLayerHeight_min",
+            "source_attribute": "boundaryLayerHeight",
+            "aggregation": {
+                "type": "min"
+            }
+        },
+        {
+            "name": "boundaryLayerHeight_max",
+            "source_attribute": "boundaryLayerHeight",
+            "aggregation": {
+                "type": "max"
+            }
+        }
+    ]
+}
