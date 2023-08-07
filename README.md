@@ -13,7 +13,10 @@ A simple example of using the framework may look as follows:
 ```python
 import evalPM as pm
 training_data, test_data = pm.features.load_data([2020], [2021])
-pm.helpers.train_and_evaluate_model_at_all_stations(pm.models.GradientBoostingRegressor, training_data, test_data, test_metrics=["RMSE", "SMAPE"])
+pm.helpers.train_and_evaluate_model_at_all_stations(pm.models.GradientBoostingRegressor,
+                                                    training_data,
+                                                    test_data,
+                                                    test_metrics=["RMSE", "SMAPE"])
 ```
 
 Here, a separate Gradient Boosting model is trained per station on data from 2020 and tested on data of the same station from 2021, with the evaluation metrics RMSE and SMAPE being reported per station.
@@ -67,7 +70,7 @@ The structure of the JSON file has to be as follows:
     "date_attribute": "date",
     "time_attribute": "time",
     "features": [
-        ...
+        {}
     ]
 }
 ```
