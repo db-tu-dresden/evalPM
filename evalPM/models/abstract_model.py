@@ -2,6 +2,7 @@ from abc import ABC, abstractmethod  # abstract base class
 import pickle
 import base64
 import json
+import time
 
 import numpy.random
 from numpy import linspace, geomspace, power
@@ -12,6 +13,7 @@ class AbstractModel(ABC):
     
     def __init__(self, seed=1337):
         numpy.random.seed(seed)
+        self._times = {}
     
     @abstractmethod
     def train(self, data_x, data_y):
@@ -55,6 +57,14 @@ class AbstractModel(ABC):
             return model
         else:
             return model, data["metadata"]
+
+    def time_it(self, name, start=True):
+        """Times any function 
+        """
+        if start:
+            self._times[name] = time.time()
+        else:
+            self._times[name] = time.time() - self._times[name]
     
     def _generate_sample_weights(self, n_samples, weighting_strategy, weighting_factor):
         """Returns a weighting for the samples, based on their count and a weighting strategy.

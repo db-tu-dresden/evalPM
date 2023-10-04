@@ -42,13 +42,18 @@ class FeedforwardNeuralNetwork(AbstractModel):
     def train(self, data_x, data_y):
         # early stopping: callbacks = [EarlyStopping(monitor="loss", min_delta=0.05, patience=3)]
         
+        self.time_it("training")
         sample_weights = super()._generate_sample_weights(len(data_x), self.weighting_strategy, self.weighting_factor)
         self.model.fit(data_x, data_y, sample_weight=sample_weights, shuffle=True, 
                        batch_size=self.batch_size, epochs=self.epochs, verbose=0, callbacks=self.callbacks)
+        self.time_it("training", start=False)
         
     
     def predict(self, data_x):
-        return self.model.predict(data_x)[:,0]
+        self.time_it("predict")
+        preds = self.model.predict(data_x)[:,0]
+        self.time_it("predict", start=False)
+        return preds
 
     def get_model_parameters(self):
         return self._hyperparameters | {
