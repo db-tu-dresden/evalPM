@@ -37,7 +37,7 @@ This can be done for an individual model or using the helper functions `train_an
 It is advisable to save relevant metadata alongside the model (feature set, dataset, model type ...), which can be done using the parameter `persistence_metadata`.
 To load a saved model, use the method `load_model()` of the appropriate model class.
 
-For further details regarding available functions and their arguments, take a look at the code and the comments within it.
+For further details regarding available functions and their arguments, take a look at the code and the docstrings within it.
 
 ### Dependencies
 
@@ -169,3 +169,7 @@ The `visual` module offers functions for visual interpretations by using `matplo
 
 The `helpers` module utilizes the modules `models` and `compare` to wrap model training and evaluation into a single function call and thereby simplify the use of the framework.
 This module also includes a function for hyperparameter optimization using grid search.
+
+## Attribution
+
+Material preparation, data collection, analysis, and implementation were performed by [Jonas Deepe](https://github.com/JonasDeepe) and [Lucas Woltmann](https://github.com/lucaswo).
