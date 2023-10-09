@@ -165,7 +165,7 @@ def _check_loaded_data(data, date_var, years, station):
         elif rows_per_year.loc[year] < 300 * 24:
             print("Station {} might have insufficient data for {}! ({} total timestamps)".format(station, year, rows_per_year.loc[year]))
 
-def load_data(training_years=[2018], test_years=[2019], dirpath="data/data-saxony/", 
+def load_data(training_years, test_years, dirpath, 
               additional_dirpaths=["data/ERA5-features/"], exclude_stations=[],
               feature_file="features_default.json", feature_engine=_calculate_features, 
               print_result=True, print_warnings=True):
