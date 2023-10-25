@@ -170,6 +170,8 @@ The `visual` module offers functions for visual interpretations by using `matplo
 The `helpers` module utilizes the modules `models` and `compare` to wrap model training and evaluation into a single function call and thereby simplify the use of the framework.
 This module also includes a function for hyperparameter optimization using grid search.
 
-## Attribution
+## Attribution and Funding
 
-Material preparation, data collection, analysis, and implementation were performed by [Jonas Deepe](https://github.com/JonasDeepe) and [Lucas Woltmann](https://github.com/lucaswo).
+Material and data preparation, analysis, and implementation were performed by [Jonas Deepe](https://github.com/JonasDeepe) and [Lucas Woltmann](https://github.com/lucaswo).
+
+This work was funded by the Modernitätsfonds (mFund) of the Bundesministerium für Digitales und Verkehr (BMDV) under grant number 19F2136H.
